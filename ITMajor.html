@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<meta charset=utf-8 />
+<title>GRAPHICAL REPRESENTATION OF THE CS ROAD MAP</title>
+<style type="text/css">
+body,html {
+  height: 100%;
+  width:102%;
+  
+}
+ </style>
+ <link href="../index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="frame">
+			<div id="banner-main">
+				<img src="../images/fc.jpg" alt="fccollege">
+			</div>
+	<div id="bar">
+				<a class="bar" href="../index.html">HOME</a>  |
+				<a class="bar" href="../Roadmap/Courses.html">SELECT COURSES</a> |
+				<a class="bar" href="../Roadmap/CORE.html">CORE COURSES</a> |
+				<a class="bar" href="../Roadmap/CSMajor.html">COMPUTER SCIENCE</a> |
+				<a class="bar" href="../Roadmap/SEMajor.html">SOFTWARE ENGINEERING</a> |
+				<a class="bar" href="../Roadmap/ITMajor.html">INFORMATION TECHNOLOGY</a> 
+			</div>
+</div>	
+<script type="text/javascript">
+var JSONdata = {
+"name": "Information Technology Major",
+  "children": [
+    {
+      "name": 'CSIT 301 Web Application Development',
+	  "children": [
+         {"name": "COMP 111"}
+      ]
+    },
+	{
+      "name": 'CSIT 400 Human Computer Interaction',
+	  "children": [
+         {"name": "COMP 205"},
+		 {"name": "COMP 220"},
+      ]
+    },
+	{
+      "name": 'CSIT 421 Information Security',
+      "children": [
+         {"name": "COMP 205"},
+		 {"name": "COMP 311"},
+      ]
+    },
+    {
+      "name": "Two Additional Courses Chosen From",
+      "children": [
+         {"name": "CSIT 210 Introduction to Multimedia",
+		 "children": [
+			 {"name": "CSCS 100 or COMP 102"},
+			 ]
+			 },
+		 {"name": "CSIT 212 System Maintenance & Configuration",
+		 "children": [
+			 {"name": "COMP 102"},
+			 ]
+			 },
+		 {"name": "CSIT 312 System & Network Administration",
+		 "children": [
+			 {"name": "COMP 205"},
+			  {"name": "COMP 311"},
+			 ]
+			 },
+         {"name": "CSIT 313 Database Administration",
+		 "children": [
+			 {"name": "COMP 205"},
+			  {"name": "COMP 213"},
+			 ]
+			 },
+     ]
+    }
+  ]
+};
+var draw = (function() {
+  
+// This needs jQuery and a set height  
+var margin = {top: 40, right: 290, bottom: 40, left: 40};
+var w = $('body').width() - margin.left - margin.right;
+var h = $('body').height() - margin.top - margin.bottom;
+
+  console.log(w)
+  console.log(h)
+  
+var canvas = d3.select("body").append('svg')
+  .attr("width", w + margin.left + margin.right)
+  .attr("height", h + margin.top + margin.bottom)
+  .append('g')
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// Create basic layout tree
+var tree = d3.layout.tree()
+   .size([h,w]);
+
+// Let D3 convert JSON into d3.node array
+var nodes = tree.nodes(JSONdata);
+var links = tree.links(nodes); //Creates a start and end
+
+
+// Add all the nodes
+var node = canvas.selectAll('.node')
+  .data(nodes)
+  .enter()
+    .append('g')
+      .attr('class','node')
+      .attr('transform', function(d){ return "translate(" + d.y + "," + d.x + ")"; })
+
+
+
+// Add circle
+var toggleColor = (function(){
+   var currentColor = "limegreen";
+    
+    return function(){
+        currentColor = currentColor == "limegreen" ? "grey" : "limegreen";
+        d3.select(this).style("fill", currentColor);
+    }
+})();
+
+    node.append("circle")
+       
+        .style("fill", "limegreen")
+        .attr("r", 10)
+        
+        .on("click", toggleColor);
+//node.append("circle")
+//  .attr('r', 10)
+//  .attr("fill", 'limegreen')
+ // .attr("opacity", function(d){ return 1 - d.depth/4 }) //Basic color fadeout - use color scale for this
+
+
+// Add text
+	node.append("text")
+  .text(function(d){ return d.name; })
+  .attr(" x ", function(d){
+    console.log(d);
+    var result = d.name
+    if(result) {
+      JSONdata.name = result; 
+    }
+    console.log(JSONdata)
+ //   draw();
+  })
+    
+
+
+
+// Setup connection
+var diagonal = d3.svg.diagonal()
+  .projection(function(d){return [d.y, d.x];});
+
+// Create links
+var links = canvas.selectAll('.links')
+  .data(links)
+  .enter()
+  .append("path")
+    .attr("class", "links")
+    .attr("fill", 'none')
+    .attr("stroke",'gray')
+    .attr('d', diagonal);
+  
+  
+  
+  
+  return 'done'
+});
+
+
+$(function(){
+    
+draw()
+
+})
+
+
+
+  </script>
+
+  
+</body>
+</html>

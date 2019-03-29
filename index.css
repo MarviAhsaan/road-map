@@ -1,0 +1,66 @@
+body{
+	background-image: url("images/green.jpg");
+	background-repeat:repeat;
+	font-family: Verdana, Geneva, Arial, sans-serif;
+	color:#9370DB;
+	font-size: small;
+	line-height: 1em;
+}
+#frame{
+	margin: 0 auto;
+	width: 980px;
+	padding:0px;
+}
+
+#bar {
+	float:left;
+	font-family:Arial;
+	font-style:bold;
+}
+.bar{	
+	padding:1em;
+	padding-left:10px;
+	padding-right:10px;
+	margin:0.2px;
+	font-size: 1.1em;		
+}
+#bar a:link {
+	text-decoration:none;
+	color: #9370DB;
+}
+#bar a:visited {
+	text-decoration:none; 
+	color: #9370DB;
+} 
+#bar a:hover {
+	background-color:#9370DB;
+	text-decoration:underline; 
+	color: #000000;
+}
+#banner-main{
+	float: left;
+	margin:62px;
+	margin-top:3px;
+	padding:0.5px;
+	
+	
+}
+#web{
+
+	float:left;
+	margin:4px;
+	margin-top: 35px;
+	margin-bottom:24px;
+	padding:10px;
+	color:#00008B;
+	font-family: Arial;
+	font-size:14px;
+	
+}
+#web-box{
+	margin:8px;
+	padding:8px;
+	width: 900px;
+	font-size: 2em;	
+	
+}

@@ -1,0 +1,167 @@
+<html>
+<head>
+		
+		<title>GRAPHICAL REPRESENTATION OF THE CS ROAD MAP</title>
+		<link href="../index.css" rel="stylesheet" type="text/css">
+	</head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script >
+$(document).ready(function() {
+    function recalculate() {
+        var sum = 0;
+
+        $("input[type=checkbox]:checked").each(function() {
+            sum += parseInt($(this).attr("rel"));
+        });
+
+        $("#output").html(sum);
+    }
+
+    $("input[type=checkbox]").change(function() {
+        recalculate();
+    });
+});
+</script>
+
+		<style type = "text/css">
+
+	.checkboxes label {
+	font-family:Open Sans Italic;
+	font-size: 12px;
+	color: #666;
+	border-radius: 20px 20px 20px 20px;
+	background: #f0f0f0;
+	padding: 3px 10px;
+	text-align: left;
+}
+input[type=checkbox]:checked + label {
+	color: white;
+	background: #707070 ;
+}
+</style>
+
+	<body>
+		<div id="frame">
+			<div id="banner-main">
+				<img src="../images/fc.jpg" alt="fccollege">
+			</div>
+			<div id="bar">
+				<a class="bar" href="../index.html">HOME</a> |
+				<a class="bar" href="../Roadmap/Courses.html">SELECT COURSES</a> |
+				<a class="bar" href="../Roadmap/CORE.html">CORE COURSES</a> |
+				<a class="bar" href="../Roadmap/CSMajor.html">COMPUTER SCIENCE</a> |
+				<a class="bar" href="../Roadmap/SEMajor.html">SOFTWARE ENGINEERING</a> |
+				<a class="bar" href="../Roadmap/ITMajor.html">INFORMATION TECHNOLOGY</a> 
+			</div>
+
+
+	<div id="web">
+		<form method="post" action="../Roadmap/CORE.html"
+		
+	<table>
+	<b>ATTENTION PLEASE!!</b><br><br><br>
+	<tr>
+	<td><i>Core courses are compulsory for every student opting a Computing major and additional courses may be chosen from Computer Science,</i><br><br></td>
+	<td><i>Software Engineering & Information Technology in order to fulfil the degree requirements.</i><br><br></td>
+	<td><i>In the displayed graphs the courses given in codes are the pre requisites of their respective subjects which must be passed before taking the subject.</i><br><br></td>  
+	</tr><br><br>
+	
+	
+	<tr>
+	<td><b>SELECT CORE COURSES:</b><br><br></td>
+	<td><input type="checkbox" value="COMP 102 Programming 1" name="courses"rel="3"><label for="option-1" class="highlight">COMP 102 Programming 1 (3 credits)</label><br>
+	<input type="checkbox" value="COMP 111 Programming 2" name="courses"rel="3"><label for="option-2" class="highlight">COMP 111 Programming 2 (3 credits)</label><br>
+	<input type="checkbox" value="COMP 113 Discrete Mathematics" name="courses"rel="3"><label for="option-3" class="highlight">COMP 113 Discrete Mathematics (3 credits)</label><br>
+	<input type="checkbox" value="COMP 200 Data Structures and Algorithms " name="courses"rel="3"><label for="option-4" class="highlight">COMP 200 Data Structures and Algorithms (3 credits)</label><br>
+	<input type="checkbox" value="COMP 205 Introduction to Information Technology" name="courses"rel="3"><label for="option-5" class="highlight">COMP 205 Introduction to Information Technology (3 credits)</label><br>
+	<input type="checkbox" value="COMP 206 Hardware Logic and Design" name="courses"rel="3"><label for="option-6" class="highlight">COMP 206 Hardware Logic and Design (3 credits)</label><br>
+	<input type="checkbox" value="COMP 213 DataBase Systems" name="courses"rel="3"><label for="option-7" class="highlight">COMP 213 DataBase Systems (3 credits)</label><br>
+	<input type="checkbox" value="COMP 220 Software Engineering 1" name="courses"rel="3"><label for="option-8" class="highlight">COMP 220 Software Engineering 1 (3 credits)</label><br>
+	<input type="checkbox" value="COMP 301 Operating Systems" name="courses"rel="3"><label for="option-9" class="highlight">COMP 301 Operating Systems (3 credits)</label><br>
+	<input type="checkbox" value="COMP 311 Computer Networks" name="courses"rel="3"><label for="option-10" class="highlight">COMP 311 Computer Networks (3 credits)</label><br>
+	<input type="checkbox" value="COMP 400 Senior Project(A+B)" name="courses"rel="6"><label for="option-11" class="highlight">COMP 400 Senior Project (A+B - 2 semesters @ 3 credits) (6 credits)</label><br>
+	<input type="checkbox" value="COMP 401 Ethics for Computing Professionals" name="courses"rel="1"><label for="option-12" class="highlight">COMP 401 Ethics for Computing Professionals (1 credit)</label><br><br></td>
+	</tr>
+	<tr>
+	<td>GENERATE GRAPH FOR CORE COURSES:</td>
+	<td><input type="submit"value="View Graph"><br><br><br><br></td>
+	</tr>
+	
+	</table>
+	</form>
+	
+	<form method="post" action="../Roadmap/CSMajor.html"
+	
+<table>
+	<td><b>SELECT COMPUTER SCIENCE COURSES:</b><br><br></td>
+	<td><input type="checkbox" value="CSCS 302 Mathematics for Computing" name="courses"rel="3"><label for="option-1" class="highlight">CSCS 302 Mathematics for Computing (3 credits)</label><br>
+	<input type="checkbox" value="CSCS 303 Design & Analysis of Algorithms" name="courses"rel="3"><label for="option-2" class="highlight">CSCS 303 Design & Analysis of Algorithms (3 credits)</label><br>
+	<input type="checkbox" value="CSCS 323 Computer Organization with Assembly Language" name="courses"rel="3"><label for="option-3" class="highlight">CSCS 323 Computer Organization with Assembly Language (3 credits)</label><br>
+	<input type="checkbox" value="CSCS 451 Compiler Construction" name="courses"rel="3"><label for="option-4" class="highlight">CSCS 451 Compiler Construction (3 credits)</label><br>
+	<input type="checkbox" value="CSCS 452 Computer Architecture" name="courses"rel="3"><label for="option-5" class="highlight">CSCS 452 Computer Architecture (3 credits)</label><br>
+	<input type="checkbox" value="CSCS 350 Introduction to Artificial Intelligence" name="courses"rel="3"><label for="option-6" class="highlight">CSCS 350 Introduction to Artificial Intelligence (3 credits)</label><br>
+	<input type="checkbox" value="CSCS 440 Systems Programming" name="courses"rel="3"><label for="option-7" class="highlight">CSCS 440 Systems Programming (3 credits)</label><br><br></td>
+	</tr>
+	<tr>
+	<td>GENERATE GRAPH FOR CS COURSES:</td>
+	<td><input type="submit"value="View Graph"><br><br><br><br></td>
+	</tr>
+	</table>
+	</form>
+	
+	<form method="post" action="../Roadmap/SEMajor.html"
+	<table>
+	<tr>
+	<td><b>SELECT SOFTWARE ENGINEERING COURSES:</b><br><br></td>
+	<td><input type="checkbox" value="CSSE 301 Software Engineering II" name="courses"rel="3"><label for="option-1" class="highlight">CSSE 301 Software Engineering II (3 credits)</label><br>
+	<input type="checkbox" value="CSSE 313 Software Requirements Engineering" name="courses"rel="3"><label for="option-2" class="highlight">CSSE 313 Software Requirements Engineering (3 credits)</label><br>
+	<input type="checkbox" value="CSSE 405 Human Computer Interaction" name="courses"rel="3"><label for="option-3" class="highlight">CSSE 405 Human Computer Interaction (3 credits)</label><br>
+	<input type="checkbox" value="CSSE 350 Object Oriented Design & Analysis" name="courses"rel="3"><label for="option-4" class="highlight">CSSE 350 Object Oriented Design & Analysis (3 credits)</label><br>
+	<input type="checkbox" value="CSSE 351 Software Quality Assurance" name="courses"rel="3"><label for="option-5" class="highlight">CSSE 351 Software Quality Assurance (3 credits)</label><br>
+	<input type="checkbox" value="CSSE 400 Software Project Management" name="courses"rel="3"><label for="option-6" class="highlight">CSSE 400 Software Project Management (3 credits)</label><br>
+	<input type="checkbox" value="CSSE 401 Software Design & Architecture" name="courses"rel="3"><label for="option-7" class="highlight">CSSE 401 Software Design & Architecture (3 credits)</label><br><br></td>
+	</tr>
+	<tr>
+	<td>GENERATE GRAPH FOR SE COURSES:</td>
+	<td><input type="submit"value="View Graph"><br><br><br><br></td>
+	</tr>
+	</table>
+	</form>
+	
+	<form method="post" action="../Roadmap/ITMajor.html"
+	<table>
+	<tr>
+	<td><b>SELECT INFORMATION TECHNOLOGY COURSES:</b><br><br></td>
+	<td><input type="checkbox" value="CSIT 301 Web Application Development" name="courses"rel="3"><label for="option-1" class="highlight">CSIT 301 Web Application Development (3 credits)</label><br>
+	<input type="checkbox" value="CSIT 400 Human Computer Interaction" name="courses"rel="3"><label for="option-2" class="highlight">CSIT 400 Human Computer Interaction (3 credits)</label><br>
+	<input type="checkbox" value="CSIT 421 Information Security" name="courses"rel="3"><label for="option-3" class="highlight">CSIT 421 Information Security (3 credits)</label><br>
+	<input type="checkbox" value="CSIT 210 Introduction to Multimedia" name="courses"rel="3"><label for="option-4" class="highlight">CSIT 210 Introduction to Multimedia (3 credits)</label><br>
+	<input type="checkbox" value="CSIT 212 System Maintenance & Configuration" name="courses"rel="3"><label for="option-5" class="highlight">CSIT 212 System Maintenance & Configuration (3 credits)</label><br>
+	<input type="checkbox" value="CSIT 312 System & Network Administration" name="courses"rel="3"><label for="option-6" class="highlight">CSIT 312 System & Network Administration (3 credits)</label><br>
+	<input type="checkbox" value="CSIT 313 Database Administration" name="courses"rel="3"><label for="option-7" class="highlight">CSIT 313 Database Administration (3 credits)</label><br><br></td>
+	</tr>
+	<tr>
+	<td>GENERATE GRAPH FOR IT COURSES:</td>
+	<td><input type="submit"value="View Graph"><br><br><br><br></td>
+	</tr>
+	
+	<b>TOTAL CREDITS OF ABOVE SELECTED COURSES ARE : &nbsp;&nbsp;&nbsp;</b><u><span id="output"></span></u><br><br><br><br><br><br>
+	<tr>
+	<td><b>NOTE:</b><br><br></td>
+	<td>Students doing a single major in CS domain must choose 4 additional courses (12 credits) of their choice from within the domain in order<br><br></td> 
+	<td>to complete the minimum requirement of 20 courses (64 credits) to successfully complete their respective major.<br><br><br></td>
+	</tr>
+	
+	<tr>
+	<td><b>ZEROS AND ONES</b><br><br></td>
+	<td>All students entering the program will be expected to participate in Os and 1s of Computing, an introductory workshop offered in several 2 hour<br><br></td>
+	<td>blocks on weekends or after scheduled classes during the early weeks of each term and intended to establish a basic level of skill in the use of<br><br></td>
+	<td>computer based tools (word processing etc) and an understanding of basic computing concepts.</td>
+	</tr>
+	</table>
+	</div>
+	
+	
+	</body>
+</html>
+	   
